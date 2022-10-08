@@ -1,6 +1,6 @@
 ## Mapas en Python : Primeros Pasos.
 
-A traves de este ejemplo sencillo vamos a aprender una manera de generar mapas en Python de manera simple. 
+A traves de este ejemplo sencillo vamos a aprender un modo de generar mapas en Python de manera simple. 
 
 En primer lugar importamos las librerias necesarias. 
 
