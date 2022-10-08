@@ -35,9 +35,11 @@ plt.show()
 
 ```python
 m = folium.Map(location=[-34.6, -58.4], zoom_start=11, tiles='CartoDB positron')
-m.save("folium/mapa_departamental.html") 
+m.save("folium/mapa_base.html") 
 ```
-![MapaBase](https://pedrocarrancio.github.io/PYTHON_mapa_hospitales_amba/folium/mapa_base.html)
+https://pedrocarrancio.github.io/PYTHON_mapa_hospitales_amba/folium/mapa_base.html
+
+![MapaBase](src/mapa_base.png)
 
 ```python
 for _, r in df_places2.iterrows():
@@ -55,10 +57,12 @@ for _, r in df_places2.iterrows():
     geo_j.add_to(m)
 m
 ```
+https://pedrocarrancio.github.io/PYTHON_mapa_hospitales_amba/folium/mapa_departamental.html
 
+![MapaDepartamental](src/mapa_departamental.png)
 ```python
 hsp = pd.read_csv('hospitales_coordenadas.csv',dtype=str)
-hsp.head()
+
 ```
 
 ```python
@@ -70,3 +74,6 @@ for _, r in hsp.iterrows():
 
 m
 ```
+https://pedrocarrancio.github.io/PYTHON_mapa_hospitales_amba/folium/mapa_departamental_con_marcadores.html
+
+![MapaDepartamentalConMarcadores](src/mapa_departamental_con_marcadores.png)
