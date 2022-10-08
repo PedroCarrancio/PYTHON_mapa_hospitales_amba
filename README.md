@@ -15,16 +15,14 @@ df_places2
 df_places.plot()
 ```
 ![Argentina](src/argentina.png)
+
 ```python
 df_places = gpd.read_file('geojson/departamento_3.json')
 df_places2=df_places[(df_places['in1'].str.slice(0, 3)=='006') | (df_places['in1'].str.slice(0, 3)=='002')]
-df_places2
-
-```
-
-```python
 df_places2.plot()
+
 ```
+![BsAs](src/buenos_aires.png)
 
 ```python
 f, ax = plt.subplots(1, figsize=(10, 10))
@@ -33,11 +31,13 @@ ax.set_xlim([-59, -58])
 ax.set_ylim([-35, -34.2])
 plt.show()
 ```
+![CabayGba](src/caba_y_gba.png)
 
 ```python
 m = folium.Map(location=[-34.6, -58.4], zoom_start=11, tiles='CartoDB positron')
-m
+m.save("folium/mapa_departamental.html") 
 ```
+![MapaBase](https://pedrocarrancio.github.io/PYTHON_mapa_hospitales_amba/folium/mapa_base.html)
 
 ```python
 for _, r in df_places2.iterrows():
