@@ -14,7 +14,7 @@ df_places2=df_places[df_places['IN1']=='06']
 df_places2
 df_places.plot()
 ```
-
+![Argentina](src/argentina.png)
 ```python
 df_places = gpd.read_file('geojson/departamento_3.json')
 df_places2=df_places[(df_places['in1'].str.slice(0, 3)=='006') | (df_places['in1'].str.slice(0, 3)=='002')]
