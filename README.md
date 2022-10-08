@@ -1,3 +1,9 @@
+## Mapas en Python : Primeros Pasos.
+
+A traves de este ejemplo sencillo vamos a aprender una manera de generar mapas en Python de manera simple. 
+
+En primer lugar importamos las librerias necesarias. 
+
 ```python
 import pandas as pd
 import numpy as np
@@ -7,6 +13,22 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 
 ```
+
+Si la importacion de Geopandas presenta algún problema con las librerias de GDAL o Fiona es necesario importarlas previamente a mano de la siguiente forma: 
+
+FIONA
+
+- Ingresar en: https://www.lfd.uci.edu/~gohlke/pythonlibs/#fiona
+- Descargar el archivo acorde a tu version de Python y a tu procesador (Por ejemplo, para Python 3.10 y procesador de 64 bits vas a necesitar el archivo Fiona‑1.8.21‑cp310‑cp310‑win_amd64.whl) 
+- Ejecutar en la consola el siguiente comando :  pip install path/to/Fiona-XXXX.whl
+
+GDAL
+
+- Ingresar en: https://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal
+- Descargar el archivo acorde a tu version de Python y a tu procesador (Por ejemplo, para Python 3.10 y procesador de 64 bits vas a necesitar el archivo GDAL‑3.4.3‑cp310‑cp310‑win_amd64.whl) 
+- Ejecutar en la consola el siguiente comando :  pip install path/to/GDAL-XXXX.whl
+
+
 
 ```python
 df_places = gpd.read_file('geojson/ign_provincia.json')
@@ -55,7 +77,7 @@ for _, r in df_places2.iterrows():
                            style_function=lambda x: {'fillColor': 'green','fillOpacity':0.3})            
     folium.Popup(r['fna']).add_to(geo_j)
     geo_j.add_to(m)
-m
+m.save("folium/mapa_departamental.html") 
 ```
 https://pedrocarrancio.github.io/PYTHON_mapa_hospitales_amba/folium/mapa_departamental.html
 
@@ -72,7 +94,7 @@ for _, r in hsp.iterrows():
     folium.Marker(location=[lat, lon],
                   popup='Nombre: {} <br> Direccion: {}'.format(r['name'], r['label'])).add_to(m)
 
-m
+m.save("folium/mapa_departamental_con_marcadores.html") 
 ```
 https://pedrocarrancio.github.io/PYTHON_mapa_hospitales_amba/folium/mapa_departamental_con_marcadores.html
 
